@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Euro', 'Punt'],
+['31/03/16',	0.79155,	1.004946334],
+['30/03/16',	0.7858,	0.997646175],
+['29/03/16',	0.7845,	0.995995704],
+['24/03/16',	0.78938,	1.002191318],
+['23/03/16',	0.78985,	1.002788026],
+['22/03/16',	0.7879,	1.00031232],
+['21/03/16',	0.78303,	0.994129402],
+['18/03/16',	0.77855,	0.988441625],
+['17/03/16',	0.78218,	0.993050248],
+['16/03/16',	0.7873,	0.999550564],
+['15/03/16',	0.78358,	0.994827678]
+        ]);
+
+        var options = {
+          title: 'Euro/Punt v Sterling',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </body>
+</html>
